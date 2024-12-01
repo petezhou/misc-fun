@@ -1,4 +1,5 @@
 import socket
+import sys
 
 def receive_file(filename, port, password):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -30,7 +31,7 @@ def receive_file(filename, port, password):
     print("File received successfully")
 
 if __name__ == "__main__":
-    filename = "received_file"
-    port = 9091
+    filename = sys.argv[1]
+    port = sys.argv[2]
     password = "password" 
     receive_file(filename, port, password)

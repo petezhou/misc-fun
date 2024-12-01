@@ -1,4 +1,5 @@
 import socket
+import sys
 
 def send_file(filename, host, port, password):
     with open(filename, 'rb') as f:
@@ -18,9 +19,8 @@ def send_file(filename, host, port, password):
         s.close()
 
 if __name__ == "__main__":
-    filename = "test.txt"
-    host = "198.98.115.166"
-    #host = "127.0.0.1"
-    port = 9091
+    filename = sys.argv[1]
+    host = sys.argv[2]
+    port = sys.argv[3]
     password = "password"
     send_file(filename, host, port, password)
